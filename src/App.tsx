@@ -43,7 +43,7 @@ export default function App() {
             wrap="wrap"
           >
             <ColorSchemePicker />
-            <Text color={dark ? "white" : "black"} weight='bold'>ThirtySixtyTen</Text>
+            <Text color={dark ? "white" : "black"} weight='bold'>SixtyThirtyTen</Text>
           </Flex>
         </Flex>
       </MantineProvider>
