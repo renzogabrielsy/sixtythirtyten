@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import {
+  MantineProvider,
+  Text,
+  ColorSchemeProvider,
+  ColorScheme,
+  Flex,
+} from "@mantine/core";
+import ColorSchemePicker from "./Components/ColorSchemePicker";
 
-function App() {
+export default function App() {
+  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+  const dark = colorScheme === "dark";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        theme={{ fontFamily: "Alata" }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        <Flex
+          mih="100vh"
+          miw="100vw"
+          bg={colorScheme}
+          gap="xl"
+          justify="center"
+          align="flex-start"
+          direction="row"
+          wrap="wrap"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Flex
+            mih={50}
+            m={20}
+            gap="xl"
+            justify="center"
+            align="center"
+            direction="row"
+            wrap="wrap"
+          >
+            <ColorSchemePicker />
+            <Text color={dark ? "white" : "black"} weight='bold'>ThirtySixtyTen</Text>
+          </Flex>
+        </Flex>
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 }
-
-export default App;
