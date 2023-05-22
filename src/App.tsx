@@ -7,6 +7,8 @@ import {
   Flex,
 } from "@mantine/core";
 import ColorSchemePicker from "./Components/ColorSchemePicker";
+import { Navbar } from "./Components/Navbar";
+import { link } from "fs";
 
 export default function App() {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
@@ -43,7 +45,7 @@ export default function App() {
             wrap="wrap"
           >
             <ColorSchemePicker />
-            <Text color={dark ? "white" : "black"} weight='bold'>SixtyThirtyTen</Text>
+            <Navbar />
           </Flex>
         </Flex>
       </MantineProvider>
