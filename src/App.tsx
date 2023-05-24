@@ -27,10 +27,10 @@ export default function App() {
         withNormalizeCSS
       >
         <Flex
-          mih="100vh"
-          miw="100vw"
+          h="100vh"
+          w="100vw"
           bg={colorScheme}
-          gap="xl"
+          // gap="xl"
           justify="center"
           align="flex-start"
           direction="row"
@@ -38,7 +38,7 @@ export default function App() {
         >
           <Flex
             mih={50}
-            mb={20}
+            // mb={20}
             gap="xl"
             justify="center"
             align="center"
