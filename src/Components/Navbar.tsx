@@ -1,20 +1,14 @@
-import { useState } from "react";
 import {
   createStyles,
   Header,
   Group,
   ActionIcon,
   Container,
-  Burger,
   rem,
-  Text
+  Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconBrandTwitter,
-  IconBrandYoutube,
-  IconBrandInstagram,
-} from "@tabler/icons-react";
+import { IconBrandInstagram } from "@tabler/icons-react";
 import ColorSchemePicker from "./ColorSchemePicker";
 
 const useStyles = createStyles((theme) => ({
@@ -87,25 +81,23 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+
+
 type Props = {};
 export function Navbar(props: Props) {
-  const [opened, { toggle }] = useDisclosure(false);
+//   const [opened, { toggle }] = useDisclosure(false);
   const { classes, cx } = useStyles();
+//   const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+//   const toggleColorScheme = (value?: ColorScheme) =>
+//     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+//   const dark = colorScheme === "dark";
 
   return (
-    <Header height={56} mb={120}>
+    <Header height={60} mb={0} bg='black' miw='100vw'>
       <Container className={classes.inner}>
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          size="sm"
-          className={classes.burger}
-        />
-        <Group className={classes.links} spacing={5}>
-          
-        </Group>
-        <Text>Sixty-Thirty-Ten</Text>
-        <Group spacing={0} className={classes.social} position="right" noWrap>
+        <Group className={classes.links} spacing={5}></Group>
+        <Text color='white'>Sixty-Thirty-Ten</Text>
+        <Group spacing={5} className={classes.social} position="right" noWrap>
           <ActionIcon size="lg">
             <IconBrandInstagram size="1.1rem" stroke={1.5} />
           </ActionIcon>
