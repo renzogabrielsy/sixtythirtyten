@@ -17,10 +17,8 @@ const useStyles = createStyles((theme) => ({
   inner: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
-    //   paddingTop: `calc(${theme.spacing.xl} * 4)`,
-    // paddingBottom: `calc(${theme.spacing.xl} * 4)`,
 
     [theme.fn.smallerThan("md")]: {
         display: "flex",
@@ -33,6 +31,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     maxWidth: "100vw",
     marginRight: `calc(${theme.spacing.xl} * 3)`,
+
 
     [theme.fn.smallerThan("md")]: {
       display: "flex",
@@ -85,7 +84,7 @@ export function HeroSection() {
   const { classes } = useStyles();
   return (
     <div>
-      <Container>
+      <Container maw='85%'>
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>The 60-30-10 Rule</Title>

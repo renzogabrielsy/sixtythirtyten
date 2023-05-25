@@ -27,8 +27,8 @@ export default function App() {
         withNormalizeCSS
       >
         <Flex
-          h="100vh"
-          w="100vw"
+          h="100%"
+          w="98vw"
           bg={colorScheme}
           // gap="xl"
           justify="center"
@@ -37,7 +37,7 @@ export default function App() {
           wrap="wrap"
         >
           <Flex
-            mih={50}
+            // mih={50}
             // mb={20}
             gap="xl"
             justify="center"
