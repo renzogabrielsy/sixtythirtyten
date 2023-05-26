@@ -28,7 +28,7 @@ export default function App() {
       >
         <Flex
           h="100%"
-          w="98vw"
+          w="100vw"
           bg={colorScheme}
           // gap="xl"
           justify="center"
