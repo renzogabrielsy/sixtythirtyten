@@ -1,6 +1,5 @@
 import {
   createStyles,
-  Image,
   Container,
   Title,
   Button,
@@ -21,10 +20,11 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
 
     [theme.fn.smallerThan("md")]: {
-        display: "flex",
+      display: "flex",
       flexDirection: "column",
       justifyContent: "center",
     },
+
   },
 
   content: {
@@ -32,14 +32,13 @@ const useStyles = createStyles((theme) => ({
     maxWidth: "100vw",
     marginRight: `calc(${theme.spacing.xl} * 3)`,
 
-
     [theme.fn.smallerThan("md")]: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       maxWidth: "90%",
       marginRight: 0,
-      height: "90vh",
+      height: "100vh",
     },
   },
 
@@ -61,14 +60,6 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  image: {
-    flex: 1,
-
-    [theme.fn.smallerThan("md")]: {
-      display: "none",
-    },
-  },
-
   highlight: {
     position: "relative",
     backgroundColor: theme.fn.variant({
@@ -84,7 +75,7 @@ export function HeroSection() {
   const { classes } = useStyles();
   return (
     <div>
-      <Container maw='85%'>
+      <Container maw="85%">
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>The 60-30-10 Rule</Title>
@@ -137,7 +128,6 @@ export function HeroSection() {
             </Group>
           </div>
           <SixtyThirtyTenApp />
-          {/* <Image src={image} className={classes.image} /> */}
         </div>
       </Container>
     </div>

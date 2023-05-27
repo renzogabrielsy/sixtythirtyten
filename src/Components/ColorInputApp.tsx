@@ -1,19 +1,9 @@
 import React from "react";
 import {
   createStyles,
-  Image,
-  Container,
-  Title,
-  Button,
-  Group,
   Text,
-  List,
-  ThemeIcon,
-  rem,
-  Paper,
   Flex,
   ColorInput,
-  BackgroundImage,
 } from "@mantine/core";
 
 type Props = {

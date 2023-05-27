@@ -1,8 +1,20 @@
 import React from "react";
-import { Paper, Flex } from "@mantine/core";
+import { Paper, Flex, createStyles } from "@mantine/core";
 type Props = {};
 
+const useStyles = createStyles((theme) => ({
+  paper: {
+    width: '88%',
+    height: '70%',
+
+    [theme.fn.smallerThan('sm')]: {
+        width: '60vw'
+    }
+  },
+}));
+
 const ColorPreview = (props: Props) => {
+    const {classes} = useStyles()
   return (
     <Paper
       shadow="md"
@@ -13,6 +25,7 @@ const ColorPreview = (props: Props) => {
       mt={10}
       mb={10}
       withBorder
+      className={classes.paper}
     >
       <Flex h="100%" direction="column">
         <Paper radius="lg" h="15%" w="100%" mt={5} mb={5} withBorder />
